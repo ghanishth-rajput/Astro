@@ -81,13 +81,17 @@ Here are some screenshots of the application:
 -> This section consists of forms image that are used in our website 
 
 ### Canva Image
-![PanCard](/capricious-corot/public/assets/images/PanCanva.png)
+![PanCard](/public/assets/images/PanCanva.png)
 
 ![AadharCard](/public/assets/images/AadharCanvaImag.png)
 
 ![License](/public/assets/images/DLCanvaImage.png)
 
 -> This section consists of the canva image that are generated from user data after clicking view button 
+
+### SavedDetails
+![SavedDetails](public/assets/images/SavedDetail.png)
+-> This section consists of the samples of some data collected from the user
 
 ## Conclusion
 
