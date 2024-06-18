@@ -83,7 +83,7 @@ Here are some screenshots of the application:
 
 ![AadharCard](/public/assets/images/AadharCanva.png)
 
-![License](/public/assets/images/DLcanva.png)
+![DlCard](public/assets/images/Dlcanva.png)
 
 -> This section consists of the canva image that are generated from user data after clicking view button 
 
