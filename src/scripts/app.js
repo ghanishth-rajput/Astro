@@ -194,45 +194,37 @@ const DOB = item.querySelector("div:nth-child(4)").textContent.trim();
 generateImage(documentType, documentNumber, holdingPersonName, DOB);
 };
 
-const generateImage =(documentType, documentNumber, holdingPersonName,DOB) => {
+const generateImage = (documentType, documentNumber, holdingPersonName, DOB) => {
     const canvas = document.createElement('canvas');
     const context = canvas.getContext('2d');
-    let canvasWidth = 600; 
+    let canvasWidth = 600;
     let canvasHeight = 400;
 
     const backgroundImage = new Image();
-    let backgroundColor = '#ffe6e6'; 
+    let backgroundColor = '#ffe6e6';
 
     const mappedDocumentType = documentMapper.get(documentType.toLowerCase());
 
-    
-if (mappedDocumentType === "DrivingLicense") {
-    backgroundImage.src = 'assets/images/gery.jpg';
-    backgroundColor = '#F4A460';
-    canvasWidth = 500;
-    canvasHeight = 300;
-} else if (mappedDocumentType === "PAN") {
-    backgroundImage.src = 'assets/images/image.jpg';
-    backgroundColor = 'FFFAFA';
-    canvasWidth = 500;
-    canvasHeight = 300;
-} else {
-    backgroundImage.src = 'assets/images/tricolour.jpg';
-}
+    if (mappedDocumentType === "DrivingLicense") {
+        backgroundImage.src = '/assets/images/gery.jpg';
+        backgroundColor = '#F4A460';
+        canvasWidth = 500;
+        canvasHeight = 300;
+    } else if (mappedDocumentType === "PAN") {
+        backgroundImage.src = '/assets/images/image.jpg';
+        backgroundColor = 'FFFAFA';
+        canvasWidth = 500;
+        canvasHeight = 300;
+    } else {
+        backgroundImage.src = '/assets/images/tricolour.jpg';
+    }
 
-    
- 
-    
     canvas.width = canvasWidth;
     canvas.height = canvasHeight;
 
-
     context.fillStyle = backgroundColor;
     context.fillRect(0, 0, canvas.width, canvas.height);
-   
 
-
-    
     backgroundImage.onload = () => {
         const scaleFactor = Math.min(canvas.width / backgroundImage.width, canvas.height / backgroundImage.height);
         const width = backgroundImage.width * scaleFactor;
@@ -242,9 +234,9 @@ if (mappedDocumentType === "DrivingLicense") {
 
         context.drawImage(backgroundImage, offsetX, offsetY, width, height);
 
-        context.fillStyle = '#333'; 
-        context.font = 'bold 22px Arial'; 
-        context.textAlign = 'left'; 
+        context.fillStyle = '#333';
+        context.font = 'bold 22px Arial';
+        context.textAlign = 'left';
 
         const formattedDOB = formatDOB(DOB);
 
@@ -262,31 +254,45 @@ if (mappedDocumentType === "DrivingLicense") {
         const lines = text.split('\n');
         lines.forEach((line, index) => {
             if (line.includes('Name:')) {
-            
-                const nameIndex = line.indexOf('Name:') + 6;
-                const name = line.substring(nameIndex);
-                context.font = 'italic bold 22px Arial';
-                context.fillText(`Name: ${name}`, 20, 50 + index * 50);
+                const nameIndex = line.indexOf('Name:');
+                context.font = 'bold 23px Arial';
+                context.fillStyle = '#000';
+                context.fillText(line.substring(0, nameIndex + 5), 20, 50 + index * 50);
+                
+                context.font = 'italic 22px Arial';
+                context.fillStyle = '#333';
+                context.fillText(line.substring(nameIndex + 5), 20 + context.measureText(line.substring(0, nameIndex + 5)).width, 50 + index * 50);
+            } else if (line.includes('#:')) {
+                const hashIndex = line.indexOf('#:');
+                context.font = 'bold 23px Arial';
+                context.fillStyle = '#000';
+                context.fillText(line.substring(0, hashIndex + 2), 20, 50 + index * 50);
+                
+                context.font = 'italic 22px Arial';
+                context.fillStyle = '#333';
+                context.fillText(line.substring(hashIndex + 2), 20 + context.measureText(line.substring(0, hashIndex + 2)).width, 50 + index * 50);
+            } else if (line.includes('DOB:')) {
+                const dobIndex = line.indexOf('DOB:');
+                context.font = 'bold 23px Arial';
+                context.fillStyle = '#000';
+                context.fillText(line.substring(0, dobIndex + 4), 20, 50 + index * 50);
+                
+                context.font = 'italic 22px Arial';
+                context.fillStyle = '#333';
+                context.fillText(line.substring(dobIndex + 4), 20 + context.measureText(line.substring(0, dobIndex + 4)).width, 50 + index * 50);
             } else {
                 context.fillText(line, 20, 50 + index * 50);
             }
         });
-   
-   
-        
-        
 
+        const image = canvas.toDataURL("image/png");
 
-
-
-    const image=canvas.toDataURL("image/png");
-
-    const newWindow = window.open();
-    newWindow.document.write('<img src="' + image + '" />');
+        const newWindow = window.open();
+        newWindow.document.write('<img src="' + image + '" />');
+    };
 };
 
-};
 const formatDOB = (DOB) => {
-const parts = DOB.split('-');
-return `${parts[2]}/${parts[1]}/${parts[0]}`;
+    const parts = DOB.split('-');
+    return `${parts[2]}/${parts[1]}/${parts[0]}`;
 }
