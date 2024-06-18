@@ -1,28 +1,28 @@
 # Offline Document Storage
  An offline application to store and manage personal documents such as Aadhaar Card, Driving License, and PAN Card.
-
+ 
 ## Table of Contents
-- [Installation]
-- [Introduction]
-- [Features]
-- [Usage]
-- [ProjectStructure]
-- [Screenshot]
-- [Conclusion]
+- [Installation](#installation)
+- [Introduction](#introduction)
+- [Features](#features)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Screenshots](#screenshots)
+- [Conclusion](#conclusion)
 
 ## Installation
 To set up the project, clone the repository
 ```bash
 git clone "https://github.com/ghanishth-rajput/Astro.git"
 cd "ASTRO"
- npm create astro@latest
+ then
 npm install
 npm run dev
 ```
 
 ## Introduction
 
--> The Offline Document Storage is a simple yet efficient tool designed to help users store and manage their important personal documents offline. It provides a user-friendly interface to add, view, edit, and delete document details.
+ The Offline Document Storage is a simple yet efficient tool designed to help users store and manage their important personal documents offline. It provides a user-friendly interface to add, view, edit, and delete document details.
 
 ## Features
 
@@ -42,25 +42,23 @@ npm run dev
 ## Project Structure
 ```sh
 D: 
-├──ASTRO
-├───capricious-corot
-├───.vscode
-├───node_modules
-├──public
-|   ├── assets/images
+ASTRO
+├── .astro
+├── .vscode
+├── node_modules
+├── public
+│   ├── assets
+│   │   └── images
+│   └── styles
+│       └── style.css
+├── src
+│   ├── components
+│   ├── layouts
+│   ├── pages
+│   │   └── index.astro
 │   ├── scripts
 │   │   └── app.js
-│   └── styles
-|       └── style.css
-├──src
-    ├───components
-    │       Card.astro
-      
-    ├───layouts
-│       Layout.astro
-│
-└───pages
-        index.astro
+
           
 ```
 ## Screenshots
@@ -83,9 +81,9 @@ Here are some screenshots of the application:
 ### Canva Image
 ![PanCard](/public/assets/images/PanCanva.png)
 
-![AadharCard](/public/assets/images/AadharCanvaImag.png)
+![AadharCard](/public/assets/images/AadharCanva.png)
 
-![License](/public/assets/images/DLCanvaImage.png)
+![License](/public/assets/images/DLcanva.png)
 
 -> This section consists of the canva image that are generated from user data after clicking view button 
 
