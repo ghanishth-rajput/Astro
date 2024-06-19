@@ -8,14 +8,14 @@
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Screenshots](#screenshots)
-- [Conclusion](#conclusion)
+
 
 ## Installation
 To set up the project, clone the repository
 ```bash
 git clone "https://github.com/ghanishth-rajput/Astro.git"
 cd "ASTRO"
- then
+
 npm install
 npm run dev
 ```
@@ -58,7 +58,8 @@ ASTRO
 │   │   └── index.astro
 │   ├── scripts
 │   │   └── app.js
-
+├── package.json
+├── tsconfig.json
           
 ```
 ## Screenshots
@@ -67,7 +68,7 @@ Here are some screenshots of the application:
 
 ### Document Entry Page
 ![MainPage](</public/assets/images/MainPage.png>)
--> Entry Page consist of front ui of the application with the options of forms selection and buttons like save and reset details.
+ Entry Page consist of front ui of the application with the options of forms selection and buttons like save and reset details.
 
 ### Forms Section
 ![DrivingLicense](/public/assets/images/DrivingLicenseForm.png)
@@ -76,7 +77,7 @@ Here are some screenshots of the application:
 
 ![AadharCard](/public/assets/images/AadharForm.png)
 
--> This section consists of forms image that are used in our website 
+This section consists of forms image that are used in our website 
 
 ### Canva Image
 ![PanCard](/public/assets/images/PanCanva.png)
@@ -85,12 +86,10 @@ Here are some screenshots of the application:
 
 ![DlCard](public/assets/images/Dlcanva.png)
 
--> This section consists of the canva image that are generated from user data after clicking view button 
+ This section consists of the canva image that are generated from user data after clicking view button 
 
 ### SavedDetails
 ![SavedDetails](public/assets/images/SavedDetail.png)
--> This section consists of the samples of some data collected from the user
+ This section consists of the samples of some data collected from the user
 
-## Conclusion
 
-The Offline Document Storage application is a convenient solution for managing personal documents offline. Its simplicity and offline functionality make it a valuable tool for maintaining privacy and security while ensuring that important information is easily accessible.
