@@ -1,7 +1,9 @@
 # Offline Document Storage
+
  An offline application to store and manage personal documents such as Aadhaar Card, Driving License, and PAN Card.
  
 ## Table of Contents
+
 - [Installation](#installation)
 - [Introduction](#introduction)
 - [Features](#features)
@@ -11,6 +13,7 @@
 
 
 ## Installation
+
 To set up the project, clone the repository
 ```bash
 git clone "https://github.com/ghanishth-rajput/Astro.git"
@@ -33,6 +36,7 @@ npm run dev
 - Offline functionality ensures data security and privacy.
 
 ## Usage
+
 1. Open the index.html file in your browser.
 2. Select the document type from the dropdown.
 3. Fill in the document details.
@@ -40,6 +44,7 @@ npm run dev
 5. View, edit, or delete saved document details.
 
 ## Project Structure
+
 ```sh
 D: 
 ASTRO
@@ -53,7 +58,12 @@ ASTRO
 │       └── style.css
 ├── src
 │   ├── components
+│          └── DocumentList.astro
+│           └── Footer.astro
+│           └── Form.astro
+│           └── Header.astro
 │   ├── layouts
+        └── BaseLayout.astro
 │   ├── pages
 │   │   └── index.astro
 │   ├── scripts
@@ -62,15 +72,18 @@ ASTRO
 ├── tsconfig.json
           
 ```
+
 ## Screenshots
 
 Here are some screenshots of the application:
 
 ### Document Entry Page
+
 ![MainPage](</public/assets/images/MainPage.png>)
  Entry Page consist of front ui of the application with the options of forms selection and buttons like save and reset details.
 
 ### Forms Section
+
 ![DrivingLicense](/public/assets/images/DrivingLicenseForm.png)
 
 ![PanForm](/public/assets/images/PanForm.png)
@@ -80,6 +93,7 @@ Here are some screenshots of the application:
 This section consists of forms image that are used in our website 
 
 ### Canva Image
+
 ![PanCard](/public/assets/images/PanCanva.png)
 
 ![AadharCard](/public/assets/images/AadharCanva.png)
@@ -89,6 +103,7 @@ This section consists of forms image that are used in our website
  This section consists of the canva image that are generated from user data after clicking view button 
 
 ### SavedDetails
+
 ![SavedDetails](public/assets/images/SavedDetail.png)
  This section consists of the samples of some data collected from the user
 
