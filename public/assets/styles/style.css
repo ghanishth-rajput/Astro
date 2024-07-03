@@ -144,13 +144,7 @@ select {
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(243, 241, 241, 0.1);
 }
-  #aadhar {
-    padding: 20px;
-    border: 2px solid #28a745;
-    background: rgba(40, 167, 69, 0.1);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-}
+
 
 #driver {
     padding: 20px;
@@ -224,4 +218,10 @@ select {
     gap: 10px;
     margin-top: 10px;
 }
-  
+#aadhaar {
+    padding: 20px;
+    border: 2px solid #28a745;
+    background: rgba(40, 167, 69, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
