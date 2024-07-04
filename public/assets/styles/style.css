@@ -12,19 +12,25 @@ main {
 section {
     margin-bottom: 20px;
 }
-
 .container {
-    width: 100%;
+    width: 100vw; /* Full width of the viewport */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    
     padding: 20px;
-    background-color: #f0f0f0;
+    background-color: #eab5b5;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(233, 81, 81, 0.1);
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw; /* Negative margin to stretch the container to the left */
+    margin-right: -50vw; /* Negative margin to stretch the container to the right */
 }
+
+
 
 .item {
     width: 80%;
@@ -86,8 +92,8 @@ button:hover {
 }
 
 .footer {
-    background-color: #2f8f98c7;
-    color: #fff;
+    background-color: #1d3a8ac7;
+    color: hwb(0 1% 97%);
     padding: 20px;
     text-align: center;
 }
@@ -119,6 +125,7 @@ button:hover {
     gap: 5px;
 }
 
+
 .formContainer input,
 select {
     width: 100%;
@@ -137,6 +144,14 @@ select {
     font-weight: 600;
 }
 
+.bold-text {
+    font-weight: 900; /* Bold font weight for text */
+}
+
+.less-bold-number {
+    font-weight: 80; /* Less bold font weight for numbers */
+}
+
 #pan {
     padding: 20px;
     border: 2px solid #007bff;
@@ -144,7 +159,7 @@ select {
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(243, 241, 241, 0.1);
 }
-
+ 
 
 #driver {
     padding: 20px;
@@ -154,20 +169,20 @@ select {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 .save-btn {
-    background-color: #ff6347; 
+    background-color: #973d62; 
     
     color: #fff; 
     border-radius: 4px;
     border: none;
-    padding: 12px 16px;
+    padding: 14px 15px;
     cursor: pointer;
     transition: background-color 0.3s;
     font-size: 22px;
-    margin-top: 10px; 
+    margin-top: 18px; 
 }
 
 .save-btn:hover {
-    background-color: #ff4c2c; 
+    background-color: #b563c2; 
 }
 @media screen and (max-width: 767px) {
     .formContainer {
@@ -197,27 +212,38 @@ select {
     font-style: italic;
   }
   .reset-btn {
-    background-color: #6c757d; 
+    background-color: #4f7697; 
     color: #fff; 
     border-radius: 4px;
     border: none;
-    padding: 12px 16px;
+    padding: 14px 15px;
     cursor: pointer;
     transition: background-color 0.3s;
     font-size: 22px;
-    margin-top: 10px; 
+    margin-top: 18px; 
   }
   
   .reset-btn:hover {
-    background-color: #5a6268; 
+    background-color: #66a1cd; 
   }
   
 .button-container {
     display: flex;
     justify-content: flex-end;
-    gap: 10px;
-    margin-top: 10px;
+    gap: 2px;
+    margin-top: 3px;
+    margin-right: 120px;
+    margin-bottom: 50px;
 }
+
+
+
+
+
+
+
+
+
 #aadhaar {
     padding: 20px;
     border: 2px solid #28a745;

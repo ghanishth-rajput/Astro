@@ -19,17 +19,13 @@ const handleSubmit = (event) => {
     event.preventDefault();
 
     const selectedDocumentType = documentTypeSelect.value;
-    console.log("selectedDocumentType:", selectedDocumentType);
-
     const documentNumberInput = documentForm.querySelector("#documentNumber_" + selectedDocumentType);
     const holdingPersonNameInput = documentForm.querySelector("#holdingPersonName_" + selectedDocumentType);
     const DOBInput = documentForm.querySelector("#DOB_" + selectedDocumentType);
+    const genderInput = documentForm.querySelector('input[name="gender"]:checked');
 
-    console.log("documentNumberInput:", documentNumberInput);
-    console.log("holdingPersonNameInput:", holdingPersonNameInput);
-    console.log("DOBInput:", DOBInput);
 
-    if (!documentNumberInput || !holdingPersonNameInput || !DOBInput) {
+    if (!documentNumberInput || !holdingPersonNameInput || !DOBInput || !genderInput) {
         console.error("One or more inputs are undefined.");
         return;
     }
@@ -37,10 +33,12 @@ const handleSubmit = (event) => {
     const documentNumber = documentNumberInput.value;
     const holdingPersonName = holdingPersonNameInput.value;
     const DOB = DOBInput.value;
+    const gender = genderInput.value;
 
-    createNewEntry(selectedDocumentType, documentNumber, holdingPersonName, DOB);
+    createNewEntry(selectedDocumentType, documentNumber, holdingPersonName, DOB, gender); 
     resetForm();
 };
+
 
 documentForm.addEventListener("submit", handleSubmit);
 
@@ -81,6 +79,7 @@ function editItem(event) {
     const documentNumber = item.querySelector("div:nth-child(2)").textContent.trim();
     const holdingPersonName = item.querySelector("div:nth-child(3)").textContent.trim();
     const DOB = item.querySelector("div:nth-child(4)").textContent.trim();
+    const gender= item.querySelector("div:nth-child(5)").textContent.trim();
 
     console.log("editItem - documentType:", documentType);
     console.log("editItem - documentNumber:", documentNumber);
@@ -100,6 +99,10 @@ function editItem(event) {
     if (DOBInput) {
         DOBInput.value = DOB;
     }
+    const genderInput = documentForm.querySelector("#GEN_" + documentType);
+    if (genderInput) {
+        genderInput.value = gender;
+    }
 
     documentTypeSelect.dispatchEvent(new Event('change'));
 }
@@ -110,11 +113,13 @@ function viewItem(event) {
     const documentNumber = item.querySelector("div:nth-child(2)").textContent.trim();
     const holdingPersonName = item.querySelector("div:nth-child(3)").textContent.trim();
     const DOB = item.querySelector("div:nth-child(4)").textContent.trim();
+    const gender = item.querySelector("div:nth-child(5)").textContent.trim();
+
 
     console.log("viewItem - documentType:", documentType);
     console.log("viewItem - documentNumber:", documentNumber);
     console.log("viewItem - holdingPersonName:", holdingPersonName);
     console.log("viewItem - DOB:", DOB);
 
-    generateImage(documentType, documentNumber, holdingPersonName, DOB);
+    generateImage(documentType, documentNumber, holdingPersonName, DOB,gender);
 }

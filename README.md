@@ -79,32 +79,32 @@ Here are some screenshots of the application:
 
 ### Document Entry Page
 
-![MainPage](</public/assets/images/MainPage.png>)
+![MainPage](</public/assets/images/FrontUI.png>)
  Entry Page consist of front ui of the application with the options of forms selection and buttons like save and reset details.
 
 ### Forms Section
 
-![DrivingLicense](/public/assets/images/DrivingLicenseForm.png)
+![DrivingLicense](/public/assets/images/formDL.png)
 
-![PanForm](/public/assets/images/PanForm.png)
+![PanForm](/public/assets/images/formPan.png)
 
-![AadharCard](/public/assets/images/AadharForm.png)
+![AadharCard](/public/assets/images/formAadhar.png)
 
 This section consists of forms image that are used in our website 
 
 ### Canva Image
 
-![PanCard](/public/assets/images/PanCanva.png)
+![PanCard](/public/assets/images/PanCard.png)
 
-![AadharCard](/public/assets/images/AadharCanva.png)
+![AadharCard](/public/assets/images/AadharCard.png)
 
-![DlCard](public/assets/images/Dlcanva.png)
+![DlCard](public/assets/images/DrvingLicense.png)
 
  This section consists of the canva image that are generated from user data after clicking view button 
 
 ### SavedDetails
 
-![SavedDetails](public/assets/images/SavedDetail.png)
+![SavedDetails](public/assets/images/StoredData.png)
  This section consists of the samples of some data collected from the user
 
 

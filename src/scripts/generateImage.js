@@ -1,6 +1,6 @@
 import { documentMapper } from './documentMapper.js';
 
-export function generateImage(documentType, documentNumber, holdingPersonName, DOB) {
+export function generateImage(documentType, documentNumber, holdingPersonName, DOB, gender) {
     const canvas = document.createElement('canvas');
     const context = canvas.getContext('2d');
     let canvasWidth = 600;
@@ -45,11 +45,11 @@ export function generateImage(documentType, documentNumber, holdingPersonName, D
 
         let text = '';
         if (mappedDocumentType === "Aadhaar") {
-            text = `--Adhara Card--\n#: ${documentNumber}\nName: ${holdingPersonName}\nDOB: ${formattedDOB}`;
+            text = `--Adhara Card--\n#: ${documentNumber}\nName: ${holdingPersonName}\nDOB: ${formattedDOB}\nGender: ${gender}`;
         } else if (mappedDocumentType === "DrivingLicense") {
-            text = `--Driving License--\n#: ${documentNumber}\nName: ${holdingPersonName}\nDOB: ${formattedDOB}`;
+            text = `--Driving License--\n#: ${documentNumber}\nName: ${holdingPersonName}\nDOB: ${formattedDOB}\nGender: ${gender}`;
         } else if (mappedDocumentType === "PAN") {
-            text = `--PAN Card--\n#: ${documentNumber}\nName: ${holdingPersonName}\nDOB: ${formattedDOB}`;
+            text = `--PAN Card--\n#: ${documentNumber}\nName: ${holdingPersonName}\nDOB: ${formattedDOB}\nGender: ${gender}`;
         } else {
             console.log("Document Type is unrecognized:", documentType);
         }
@@ -83,7 +83,22 @@ export function generateImage(documentType, documentNumber, holdingPersonName, D
                 context.font = 'italic 22px Arial';
                 context.fillStyle = '#333';
                 context.fillText(line.substring(dobIndex + 4), 20 + context.measureText(line.substring(0, dobIndex + 4)).width, 50 + index * 50);
-            } else {
+            } else if (line.includes('Gender:')) {
+                const genderIndex = line.indexOf('Gender:');
+                const genderLabel = line.substring(0, genderIndex + 7); 
+                const genderValue = line.substring(genderIndex + 7); 
+            
+                
+                context.font = 'bold 23px Arial';
+                context.fillStyle = '#000';
+                context.fillText(genderLabel, 20, 50 + index * 50);
+            
+                
+                context.font = 'italic 22px Arial';
+                context.fillStyle = '#333';
+                context.fillText(genderValue, 20 + context.measureText(genderLabel).width, 50 + index * 50);
+            }
+             else {
                 context.fillText(line, 20, 50 + index * 50);
             }
         });
