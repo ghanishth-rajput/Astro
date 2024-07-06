@@ -23,12 +23,12 @@ function populateAadhaarFields() {
            <!-- Radio buttons for gender -->
             <div class="gender-selection">
                 <label>
-                    <input type="radio" id="gender_male" name="gender" value="MALE" required>
-                    Male
+                    <input type="radio" id="gender_male" name="gender" value="male" required>
+                    male
                 </label>
                 <label>
-                    <input type="radio" id="gender_female" name="gender" value="FEMALE" required>
-                    Female
+                    <input type="radio" id="gender_female" name="gender" value="female" required>
+                    female
                 </label>
             </div>
 
@@ -57,12 +57,12 @@ function populateDrivingLicenseFields() {
             <!-- Radio buttons for gender -->
             <div class="gender-selection">
                 <label>
-                    <input type="radio" id="gender_male" name="gender" value="MALE" required>
-                    Male
+                    <input type="radio" id="gender_male" name="gender" value="male" required>
+                    male
                 </label>
                 <label>
-                    <input type="radio" id="gender_female" name="gender" value="FEMALE" required>
-                    Female
+                    <input type="radio" id="gender_female" name="gender" value="female" required>
+                    female
                 </label>
             </div>
 
@@ -83,12 +83,12 @@ function populatePanCardFields() {
            <!-- Radio buttons for gender -->
             <div class="gender-selection">
                 <label>
-                    <input type="radio" id="gender_male" name="gender" value="MALE" required>
-                    Male
+                    <input type="radio" id="gender_male" name="gender" value="male" required>
+                    male
                 </label>
                 <label>
-                    <input type="radio" id="gender_female" name="gender" value="FEMALE" required>
-                    Female
+                    <input type="radio" id="gender_female" name="gender" value="female" required>
+                    female
                 </label>
             </div>
 

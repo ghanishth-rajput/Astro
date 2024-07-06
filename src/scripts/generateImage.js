@@ -83,8 +83,8 @@ export function generateImage(documentType, documentNumber, holdingPersonName, D
                 context.font = 'italic 22px Arial';
                 context.fillStyle = '#333';
                 context.fillText(line.substring(dobIndex + 4), 20 + context.measureText(line.substring(0, dobIndex + 4)).width, 50 + index * 50);
-            } else if (line.includes('Gender:')) {
-                const genderIndex = line.indexOf('Gender:');
+            } else if (line.includes('Gender: ')) {
+                const genderIndex = line.indexOf('Gender: ');
                 const genderLabel = line.substring(0, genderIndex + 7); 
                 const genderValue = line.substring(genderIndex + 7); 
             

@@ -98,7 +98,7 @@ This section consists of forms image that are used in our website
 
 ![AadharCard](/public/assets/images/AadharCard.png)
 
-![DlCard](public/assets/images/DrvingLicense.png)
+![DlCard](public/assets/images/DrivingLicense.png)
 
  This section consists of the canva image that are generated from user data after clicking view button 
 
