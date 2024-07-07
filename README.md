@@ -63,11 +63,16 @@ ASTRO
 │           └── Form.astro
 │           └── Header.astro
 │   ├── layouts
-        └── BaseLayout.astro
+|        └── BaseLayout.astro
 │   ├── pages
 │   │   └── index.astro
 │   ├── scripts
-│   │   └── app.js
+│   │    └── app.js
+│        └── createEntry.js
+│        └── documentMapper.js
+│        └── formHandlers.js
+|        └── generateImage.js
+|        └── resetForm.js
 ├── package.json
 ├── tsconfig.json
           
