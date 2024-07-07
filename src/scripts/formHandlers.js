@@ -19,23 +19,30 @@ function populateAadhaarFields() {
             <input type="text" id="documentNumber_aadhaar" name="documentNumber" required>
             <label for="holdingPersonName_aadhaar">Name:</label>
             <input type="text" id="holdingPersonName_aadhaar" name="holdingPersonName" required>
-             <label for="gender">Gender:</label>
-           <!-- Radio buttons for gender -->
-            <div class="gender-selection">
-                <label>
-                    <input type="radio" id="gender_male" name="gender" value="male" required>
-                    male
-                </label>
-                <label>
-                    <input type="radio" id="gender_female" name="gender" value="female" required>
-                    female
-                </label>
-            </div>
+          
 
             <label for="DOB_aadhaar">Date of Birth:</label>
             <input type="date" id="DOB_aadhaar" name="DOB" required>
             <label for="aadhaarAddress">Address:</label>
             <textarea id="aadhaarAddress" name="aadhaarAddress" required></textarea>
+               <label for="gender">Gender:</label>
+           <!-- Radio buttons for gender -->
+            <div class="gender-selection">
+                <label>
+                  <div class="gender-selection" style="display: flex; gap: 10px;">
+                <label style="display: flex; align-items: center;">
+                    <input type="radio" id="gender_male" name="gender" value="male" required checked>
+                    male
+                </label>
+                <label style="display: flex; align-items: center;">
+                    <input type="radio" id="gender_female" name="gender" value="female" required>
+                    female
+                </label>
+            </div>
+             <div class="button-container">
+        <button type="submit" id="saveButton" class="save-btn">Save</button>
+        <button type="button" id="resetButton" class="reset-btn">Reset</button>
+      </div>
         </div>
     `;
 }
@@ -57,14 +64,20 @@ function populateDrivingLicenseFields() {
             <!-- Radio buttons for gender -->
             <div class="gender-selection">
                 <label>
-                    <input type="radio" id="gender_male" name="gender" value="male" required>
+                 <div class="gender-selection" style="display: flex; gap: 10px;">
+                <label style="display: flex; align-items: center;">
+                    <input type="radio" id="gender_male" name="gender" value="male" required checked>
                     male
                 </label>
-                <label>
+                <label style="display: flex; align-items: center;">
                     <input type="radio" id="gender_female" name="gender" value="female" required>
                     female
                 </label>
             </div>
+             <div class="button-container">
+        <button type="submit" id="saveButton" class="save-btn">Save</button>
+        <button type="button" id="resetButton" class="reset-btn">Reset</button>
+      </div>
 
         </div>
     `;
@@ -83,41 +96,25 @@ function populatePanCardFields() {
            <!-- Radio buttons for gender -->
             <div class="gender-selection">
                 <label>
-                    <input type="radio" id="gender_male" name="gender" value="male" required>
+                 <div class="gender-selection" style="display: flex; gap: 10px;">
+                <label style="display: flex; align-items: center;">
+                    <input type="radio" id="gender_male" name="gender" value="male" required checked>
                     male
                 </label>
-                <label>
+                <label style="display: flex; align-items: center;">
                     <input type="radio" id="gender_female" name="gender" value="female" required>
                     female
                 </label>
             </div>
+             <div class="button-container">
+        <button type="submit" id="saveButton" class="save-btn">Save</button>
+        <button type="button" id="resetButton" class="reset-btn">Reset</button>
+      </div>
 
         </div>
     `;
 }
 
-document.addEventListener('input', function(event) {
-    const target = event.target;
-    const documentType = document.getElementById('documentType').value.toLowerCase();
-
-    if (target && target.matches('input[name="documentNumber"]')) {
-        const inputValue = target.value.trim();
-        let containsAlphabetic = false;
-
-        
-        for (let char of inputValue) {
-            if (/[a-zA-Z]/.test(char)) {
-                containsAlphabetic = true;
-                break;
-            }
-        }
-
-        
-        if (containsAlphabetic) {
-            target.style.fontWeight = '700'; 
-        } else {
-            target.style.fontWeight = '300'; 
-        }
 
         
         switch (documentType) {
@@ -134,8 +131,7 @@ document.addEventListener('input', function(event) {
                 
                 break;
         }
-    }
-});
+    
 
 function validateAadhaar(inputValue) {
     if (inputValue.length > 12) {

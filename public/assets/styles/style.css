@@ -13,7 +13,7 @@ section {
     margin-bottom: 20px;
 }
 .container {
-    width: 100vw; /* Full width of the viewport */
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -26,8 +26,9 @@ section {
     position: relative;
     left: 50%;
     right: 50%;
-    margin-left: -50vw; /* Negative margin to stretch the container to the left */
-    margin-right: -50vw; /* Negative margin to stretch the container to the right */
+    margin-left: -50vw; 
+    margin-right: -50vw; 
+    margin-top: 200px;
 }
 
 
@@ -92,9 +93,16 @@ button:hover {
 }
 
 .footer {
-    background-color: #1d3a8ac7;
+    background-color: #db065bc7;
     color: hwb(0 1% 97%);
-    padding: 20px;
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.foote {
+    background-color: #000000ec;
+    color: hwb(0 98% 2% / 0.836);
+    padding: 25px;
     text-align: center;
 }
 
@@ -106,7 +114,7 @@ button:hover {
     background-color: #fff;
     border: 1px solid #caced1;
     border-radius: 0.25rem;
-    color: #000;
+    color: #2f8e92;
     cursor: pointer;
     margin-top: 10px;
 }
@@ -114,6 +122,7 @@ button:hover {
 #documentForm label {
     font-size: 20px;
     font-family: sans-serif;
+    color: #da0c0c;
 }
 
 .formContainer {
@@ -122,19 +131,37 @@ button:hover {
     display: flex;
     flex-direction: column;
     margin: auto;
-    gap: 5px;
+    gap: 6px;
+    font-weight: bold;
 }
-
+.bold {
+    font-weight: bold;
+}
 
 .formContainer input,
 select {
     width: 100%;
-    padding: 12px 0px;
+    padding: 12px 10px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 10px;
     box-sizing: border-box;
+    -ms-text-size-adjust: 25px ;
+    font-weight: bold;
+    
+}
+.formContainer select,
+.formContainer textarea {
+    width: 100%;
+    padding: 12px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-weight: bold; /* This will apply bold font-weight only to input fields */
+    letter-spacing: 0.09em;
 }
 
 .formContainer input[type="date"] {
@@ -174,11 +201,11 @@ select {
     color: #fff; 
     border-radius: 4px;
     border: none;
-    padding: 14px 15px;
+    padding: 15px 15px;
     cursor: pointer;
     transition: background-color 0.3s;
     font-size: 22px;
-    margin-top: 18px; 
+   
 }
 
 .save-btn:hover {
@@ -196,18 +223,18 @@ select {
     }
   }
   .label {
-    font-weight: lighter; /* Make label text lighter */
+    font-weight: lighter; 
   }
   
   .value {
-    font-style: italic; /* Make value text italic */
+    font-style: italic; 
   }
-  /* Make label text bold */
+  
   .canvas-label {
     font-weight: bold;
   }
   
-  /* Make value text italic */
+  
   .canvas-value {
     font-style: italic;
   }
@@ -220,7 +247,7 @@ select {
     cursor: pointer;
     transition: background-color 0.3s;
     font-size: 22px;
-    margin-top: 18px; 
+   
   }
   
   .reset-btn:hover {
@@ -232,10 +259,20 @@ select {
     justify-content: flex-end;
     gap: 2px;
     margin-top: 3px;
-    margin-right: 120px;
-    margin-bottom: 50px;
+    margin-right: 5px;
+   
 }
 
+.item.header {
+    color: rgb(79, 130, 197);
+}
+
+
+.item.header div {
+    padding: 10px; 
+    font-weight: bold; 
+    text-align: center; 
+}
 
 
 
@@ -246,8 +283,54 @@ select {
 
 #aadhaar {
     padding: 20px;
-    border: 2px solid #28a745;
-    background: rgba(40, 167, 69, 0.1);
+    border: 2px solid #67c4e9;
+    background: rgba(198, 217, 223, 0.69);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
+
+.item.header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    color: rgb(31, 165, 223); 
+    padding: 10px; 
+    font-weight: bold; 
+}
+
+
+.item {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px; 
+    border-bottom: 1px solid #ccc; 
+}
+
+
+.item.header div,
+.item div {
+    flex: 1; 
+    text-align: center; 
+    padding: 10px; 
+}
+
+
+.item div:last-child {
+    display: flex;
+    gap: 10px; 
+    justify-content: center; 
+}
+.saved{
+    justify-content: center;
+    margin-left: 600px;
+    
+
+    
+}
+
+
+
+
+
+

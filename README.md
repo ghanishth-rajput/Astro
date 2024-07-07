@@ -82,13 +82,16 @@ Here are some screenshots of the application:
 ![MainPage](</public/assets/images/FrontUI.png>)
  Entry Page consist of front ui of the application with the options of forms selection and buttons like save and reset details.
 
+ ![SelectionPage](</public/assets/images/OptionsSelection.png>)
+ Entry Page consist of dropdown for form selection
+
 ### Forms Section
 
-![DrivingLicense](/public/assets/images/formDL.png)
+![DrivingLicense](/public/assets/images/DLForm.png)
 
-![PanForm](/public/assets/images/formPan.png)
+![PanForm](/public/assets/images/PanForm.png)
 
-![AadharCard](/public/assets/images/formAadhar.png)
+![AadharCard](/public/assets/images/AadharForm.png)
 
 This section consists of forms image that are used in our website 
 
@@ -104,7 +107,7 @@ This section consists of forms image that are used in our website
 
 ### SavedDetails
 
-![SavedDetails](public/assets/images/StoredData.png)
+![SavedDetails](public/assets/images/Data.png)
  This section consists of the samples of some data collected from the user
 
 
