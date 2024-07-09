@@ -1,14 +1,21 @@
 <section>
-    <h2>Enter Document Details</h2>
-    <form id="documentForm">
-      <label for="documentType">Select Document Type:</label>
-      <select class="form" id="documentType" name="documentType" required>
-        <option value="">Select Document Type</option>
-        <option value="aadhaar">Aadhaar</option>
-        <option value="drivingLicense">Driving License</option>
-        <option value="panCard">PAN Card</option>
-      </select>
-      <div id="documentFields" style="display: none"></div>
-      
-    </form>
-  </section>
+  <h2>Enter Document Details</h2>
+  <form id="documentForm">
+    <label for="documentType">Select Document Type:</label>
+    <select class="form" id="documentType" name="documentType" required>
+      <option value="">Select Document Type</option>
+      <option value="aadhaar">Aadhaar</option>
+      <option value="drivingLicense">Driving License</option>
+      <option value="panCard">PAN Card</option>
+    </select>
+    <div id="documentFields" style="display: none"></div>
+   
+    <div id="formContainer"></div>
+    <div class="button-container">
+      <button type="submit" id="saveButton" class="save-btn">Save</button>
+      <button type="button" id="resetButton" class="reset-btn">Reset</button>
+    </div>
+
+  </form>
+  
+</section>

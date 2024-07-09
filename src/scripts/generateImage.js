@@ -1,20 +1,39 @@
+// generateImage.js
+// FontAwesome setup
+// In both createEntry.js and generateImage.js
+import { library, dom } from '@fortawesome/fontawesome-svg-core';
+import { faMars, faVenus } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faMars, faVenus);
+dom.watch();
+
 import { documentMapper } from './documentMapper.js';
+import { formatDOB } from './utils.js';
 
 export function generateImage(documentType, documentNumber, holdingPersonName, DOB, gender) {
+    let genderText = '';
+    if (gender === 'male') {
+        genderText = 'Male';
+    } else if (gender === 'female') {
+        genderText = 'Female';
+    } else {
+        genderText = 'Unknown'; // Handle other cases as needed
+    }
+
     const canvas = document.createElement('canvas');
     const context = canvas.getContext('2d');
-    let canvasWidth = 600;
-    let canvasHeight = 400;
+    const canvasWidth = 600;
+    const canvasHeight = 400;
 
     const mappedDocumentType = documentMapper.get(documentType.toLowerCase());
     let backgroundImageUrl = '';
 
     switch (mappedDocumentType) {
         case 'Aadhaar':
-            backgroundImageUrl = '/assets/images/tricolour.jpg';
+            backgroundImageUrl = '/assets/images/gery.jpg';
             break;
         case 'DrivingLicense':
-            backgroundImageUrl = '/assets/images/image.jpg';
+            backgroundImageUrl = '/assets/images/gery.jpg';
             break;
         case 'PAN':
             backgroundImageUrl = '/assets/images/gery.jpg';
@@ -45,62 +64,18 @@ export function generateImage(documentType, documentNumber, holdingPersonName, D
 
         let text = '';
         if (mappedDocumentType === "Aadhaar") {
-            text = `--Adhara Card--\n#: ${documentNumber}\nName: ${holdingPersonName}\nDOB: ${formattedDOB}\nGender: ${gender}`;
+            text = `--Aadhaar Card--\n#: ${documentNumber}\nName: ${holdingPersonName}\nDOB: ${DOB}\nGender: ${genderText}`;
         } else if (mappedDocumentType === "DrivingLicense") {
-            text = `--Driving License--\n#: ${documentNumber}\nName: ${holdingPersonName}\nDOB: ${formattedDOB}\nGender: ${gender}`;
+            text = `--Driving License--\n#: ${documentNumber}\nName: ${holdingPersonName}\nDOB: ${DOB}\nGender: ${genderText}`;
         } else if (mappedDocumentType === "PAN") {
-            text = `--PAN Card--\n#: ${documentNumber}\nName: ${holdingPersonName}\nDOB: ${formattedDOB}\nGender: ${gender}`;
+            text = `--PAN Card--\n#: ${documentNumber}\nName: ${holdingPersonName}\nDOB: ${DOB}\nGender: ${genderText}`;
         } else {
             console.log("Document Type is unrecognized:", documentType);
         }
 
         const lines = text.split('\n');
         lines.forEach((line, index) => {
-            if (line.includes('Name:')) {
-                const nameIndex = line.indexOf('Name:');
-                context.font = 'bold 23px Arial';
-                context.fillStyle = '#000';
-                context.fillText(line.substring(0, nameIndex + 5), 20, 50 + index * 50);
-
-                context.font = 'italic 22px Arial';
-                context.fillStyle = '#333';
-                context.fillText(line.substring(nameIndex + 5), 20 + context.measureText(line.substring(0, nameIndex + 5)).width, 50 + index * 50);
-            } else if (line.includes('#:')) {
-                const hashIndex = line.indexOf('#:');
-                context.font = 'bold 23px Arial';
-                context.fillStyle = '#000';
-                context.fillText(line.substring(0, hashIndex + 2), 20, 50 + index * 50);
-
-                context.font = 'italic 22px Arial';
-                context.fillStyle = '#333';
-                context.fillText(line.substring(hashIndex + 2), 20 + context.measureText(line.substring(0, hashIndex + 2)).width, 50 + index * 50);
-            } else if (line.includes('DOB:')) {
-                const dobIndex = line.indexOf('DOB:');
-                context.font = 'bold 23px Arial';
-                context.fillStyle = '#000';
-                context.fillText(line.substring(0, dobIndex + 4), 20, 50 + index * 50);
-
-                context.font = 'italic 22px Arial';
-                context.fillStyle = '#333';
-                context.fillText(line.substring(dobIndex + 4), 20 + context.measureText(line.substring(0, dobIndex + 4)).width, 50 + index * 50);
-            } else if (line.includes('Gender: ')) {
-                const genderIndex = line.indexOf('Gender: ');
-                const genderLabel = line.substring(0, genderIndex + 7); 
-                const genderValue = line.substring(genderIndex + 7); 
-            
-                
-                context.font = 'bold 23px Arial';
-                context.fillStyle = '#000';
-                context.fillText(genderLabel, 20, 50 + index * 50);
-            
-                
-                context.font = 'italic 22px Arial';
-                context.fillStyle = '#333';
-                context.fillText(genderValue, 20 + context.measureText(genderLabel).width, 50 + index * 50);
-            }
-             else {
-                context.fillText(line, 20, 50 + index * 50);
-            }
+            context.fillText(line, 20, 50 + index * 50);
         });
 
         const image = canvas.toDataURL("image/png");
@@ -108,9 +83,4 @@ export function generateImage(documentType, documentNumber, holdingPersonName, D
         const newWindow = window.open();
         newWindow.document.write('<img src="' + image + '" />');
     };
-}
-
-export function formatDOB(DOB) {
-    const parts = DOB.split('-');
-    return `${parts[2]}/${parts[1]}/${parts[0]}`;
 }

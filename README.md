@@ -112,7 +112,7 @@ This section consists of forms image that are used in our website
 
 ### SavedDetails
 
-![SavedDetails](public/assets/images/Data.png)
+![SavedDetails](public/assets/images/StoredData.png)
  This section consists of the samples of some data collected from the user
 
 

@@ -1,8 +1,16 @@
 import { populateFields } from '../scripts/formHandlers.js';
 import { createNewEntry } from '../scripts/createEntry.js';
 import { documentMapper } from '../scripts/documentMapper.js';
-import { generateImage, formatDOB } from '../scripts/generateImage.js';
+import { generateImage } from '../scripts/generateImage.js';
 import { resetForm } from '../scripts/resetForm.js';
+import { formatDOB } from '../scripts/utils.js';
+// FontAwesome setup
+import { library, dom } from '@fortawesome/fontawesome-svg-core';
+import { faMars, faVenus } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faMars, faVenus);
+dom.watch();
+
 
 const documentForm = document.getElementById("documentForm");
 const documentTypeSelect = document.getElementById("documentType");
@@ -24,7 +32,6 @@ const handleSubmit = (event) => {
     const DOBInput = documentForm.querySelector("#DOB_" + selectedDocumentType);
     const genderInput = documentForm.querySelector('input[name="gender"]:checked');
 
-
     if (!documentNumberInput || !holdingPersonNameInput || !DOBInput || !genderInput) {
         console.error("One or more inputs are undefined.");
         return;
@@ -35,10 +42,9 @@ const handleSubmit = (event) => {
     const DOB = DOBInput.value;
     const gender = genderInput.value;
 
-    createNewEntry(selectedDocumentType, documentNumber, holdingPersonName, DOB, gender); 
+    createNewEntry(selectedDocumentType, documentNumber, holdingPersonName, DOB, gender);
     resetForm();
 };
-
 
 documentForm.addEventListener("submit", handleSubmit);
 
@@ -66,6 +72,7 @@ container.addEventListener("click", (event) => {
         viewItem(event);
     }
 });
+
 resetButton.addEventListener("click", resetForm);
 
 function deleteItem(event) {
@@ -75,11 +82,11 @@ function deleteItem(event) {
 
 function editItem(event) {
     const item = event.target.closest(".item");
-    const documentType = item.querySelector("div:nth-child(1)").textContent.split("#")[1].trim();
-    const documentNumber = item.querySelector("div:nth-child(2)").textContent.trim();
-    const holdingPersonName = item.querySelector("div:nth-child(3)").textContent.trim();
-    const DOB = item.querySelector("div:nth-child(4)").textContent.trim();
-    const gender= item.querySelector("div:nth-child(5)").textContent.trim();
+    const documentType = item.querySelector("div:nth-child(2)").textContent.trim();
+    const documentNumber = item.querySelector("div:nth-child(3)").textContent.trim();
+    const holdingPersonName = item.querySelector("div:nth-child(4)").textContent.trim();
+    const DOB = item.querySelector("div:nth-child(5)").textContent.trim();
+    const gender = item.querySelector("div:nth-child(6)").textContent.trim();
 
     console.log("editItem - documentType:", documentType);
     console.log("editItem - documentNumber:", documentNumber);
@@ -99,27 +106,37 @@ function editItem(event) {
     if (DOBInput) {
         DOBInput.value = DOB;
     }
-    const genderInput = documentForm.querySelector("#GEN_" + documentType);
+    const genderInput = documentForm.querySelector('input[name="gender"][value="' + gender + '"]');
     if (genderInput) {
-        genderInput.value = gender;
+        genderInput.checked = true;
     }
 
     documentTypeSelect.dispatchEvent(new Event('change'));
 }
-
 function viewItem(event) {
     const item = event.target.closest(".item");
-    const documentType = item.querySelector("div:nth-child(1)").textContent.split("#")[1].trim();
-    const documentNumber = item.querySelector("div:nth-child(2)").textContent.trim();
-    const holdingPersonName = item.querySelector("div:nth-child(3)").textContent.trim();
-    const DOB = item.querySelector("div:nth-child(4)").textContent.trim();
-    const gender = item.querySelector("div:nth-child(5)").textContent.trim();
+    const documentType = item.querySelector("div:nth-child(2)").textContent.trim();
+    const documentNumber = item.querySelector("div:nth-child(3)").textContent.trim();
+    const holdingPersonName = item.querySelector("div:nth-child(4)").textContent.trim();
+    const DOB = item.querySelector("div:nth-child(5)").textContent.trim();
+    let gender = '';
 
+    // Check for gender icon
+    const genderIconElement = item.querySelector("div:nth-child(6) i");
+    if (genderIconElement) {
+        // Retrieve gender from icon class
+        if (genderIconElement.classList.contains("fa-mars")) {
+            gender = "male";
+        } else if (genderIconElement.classList.contains("fa-venus")) {
+            gender = "female";
+        }
+    }
 
     console.log("viewItem - documentType:", documentType);
     console.log("viewItem - documentNumber:", documentNumber);
     console.log("viewItem - holdingPersonName:", holdingPersonName);
     console.log("viewItem - DOB:", DOB);
+    console.log("viewItem - gender:", gender);
 
-    generateImage(documentType, documentNumber, holdingPersonName, DOB,gender);
+    generateImage(documentType, documentNumber, holdingPersonName, DOB, gender);
 }

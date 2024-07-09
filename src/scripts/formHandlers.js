@@ -39,10 +39,7 @@ function populateAadhaarFields() {
                     female
                 </label>
             </div>
-             <div class="button-container">
-        <button type="submit" id="saveButton" class="save-btn">Save</button>
-        <button type="button" id="resetButton" class="reset-btn">Reset</button>
-      </div>
+          
         </div>
     `;
 }
@@ -74,11 +71,7 @@ function populateDrivingLicenseFields() {
                     female
                 </label>
             </div>
-             <div class="button-container">
-        <button type="submit" id="saveButton" class="save-btn">Save</button>
-        <button type="button" id="resetButton" class="reset-btn">Reset</button>
-      </div>
-
+      
         </div>
     `;
 }
@@ -106,10 +99,7 @@ function populatePanCardFields() {
                     female
                 </label>
             </div>
-             <div class="button-container">
-        <button type="submit" id="saveButton" class="save-btn">Save</button>
-        <button type="button" id="resetButton" class="reset-btn">Reset</button>
-      </div>
+           
 
         </div>
     `;
