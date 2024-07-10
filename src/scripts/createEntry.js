@@ -12,15 +12,15 @@ export function createNewEntry(selectedDocumentType, documentNumber, holdingPers
     entryCount++; 
     const tableBody = document.querySelector(".container");
 
-    // Determine the gender icon
+    
     let genderIcon = '';
     if (gender.toLowerCase() === 'male') {
-        genderIcon = '<i class="fas fa-mars"></i>'; // Male icon
+        genderIcon = '<i class="fas fa-mars"></i>'; 
     } else if (gender.toLowerCase() === 'female') {
-        genderIcon = '<i class="fas fa-venus"></i>'; // Female icon
+        genderIcon = '<i class="fas fa-venus"></i>'; 
     }
 
-    // Format the date to DD/MM/YYYY
+    
     const formattedDOB = formatDOB(DOB);
 
     tableBody.insertAdjacentHTML('beforeend', `

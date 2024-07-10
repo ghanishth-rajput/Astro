@@ -1,6 +1,4 @@
-// generateImage.js
-// FontAwesome setup
-// In both createEntry.js and generateImage.js
+
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import { faMars, faVenus } from '@fortawesome/free-solid-svg-icons';
 
@@ -17,7 +15,7 @@ export function generateImage(documentType, documentNumber, holdingPersonName, D
     } else if (gender === 'female') {
         genderText = 'Female';
     } else {
-        genderText = 'Unknown'; // Handle other cases as needed
+        genderText = 'Unknown'; 
     }
 
     const canvas = document.createElement('canvas');

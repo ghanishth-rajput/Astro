@@ -160,7 +160,7 @@ select {
     border: 1px solid #ccc;
     border-radius: 10px;
     box-sizing: border-box;
-    font-weight: bold; /* This will apply bold font-weight only to input fields */
+    font-weight: bold; 
     letter-spacing: 0.09em;
 }
 
@@ -172,11 +172,11 @@ select {
 }
 
 .bold-text {
-    font-weight: 900; /* Bold font weight for text */
+    font-weight: 900; 
 }
 
 .less-bold-number {
-    font-weight: 80; /* Less bold font weight for numbers */
+    font-weight: 80; 
 }
 
 #pan {
@@ -290,17 +290,17 @@ select {
   
   .item.header > div {
     text-align: left;
-    padding: 8px; /* Adjust padding as needed */
-    flex: 1; /* Ensures that each div takes up an equal amount of space */
+    padding: 8px; 
+    flex: 1; 
   }
   .item.header > div:nth-child(1) {
-    flex: 0.2; /* Adjust the width of the first column */
+    flex: 0.2; 
   }
-  .item > div:nth-child(2) { /* Document column */
+  .item > div:nth-child(2) { 
     flex: 0.7; 
   }
   .item.header > div:nth-child(5) {
-    flex: 0.5; /* Adjust the width of the first column */
+    flex: 0.5; 
   }
 
 
@@ -310,7 +310,7 @@ select {
   
   .item > div {
     text-align: left;
-    padding: 8px; /* Adjust padding to match the header */
+    padding: 8px; 
   }
   
   

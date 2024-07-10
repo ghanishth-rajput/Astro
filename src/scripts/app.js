@@ -4,7 +4,7 @@ import { documentMapper } from '../scripts/documentMapper.js';
 import { generateImage } from '../scripts/generateImage.js';
 import { resetForm } from '../scripts/resetForm.js';
 import { formatDOB } from '../scripts/utils.js';
-// FontAwesome setup
+
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import { faMars, faVenus } from '@fortawesome/free-solid-svg-icons';
 
@@ -121,10 +121,10 @@ function viewItem(event) {
     const DOB = item.querySelector("div:nth-child(5)").textContent.trim();
     let gender = '';
 
-    // Check for gender icon
+    
     const genderIconElement = item.querySelector("div:nth-child(6) i");
     if (genderIconElement) {
-        // Retrieve gender from icon class
+        
         if (genderIconElement.classList.contains("fa-mars")) {
             gender = "male";
         } else if (genderIconElement.classList.contains("fa-venus")) {
