@@ -1,6 +1,6 @@
 import { formatDOB } from './utils.js';
 
-// In both createEntry.js and generateImage.js
+
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import { faMars, faVenus } from '@fortawesome/free-solid-svg-icons';
 
@@ -9,15 +9,15 @@ dom.watch();
 
 let entryCount = 0;
 export function createNewEntry(selectedDocumentType, documentNumber, holdingPersonName, DOB, gender) {
-    entryCount++; // Increment the counter for each new entry
+    entryCount++; 
     const tableBody = document.querySelector(".container");
 
     // Determine the gender icon
     let genderIcon = '';
     if (gender.toLowerCase() === 'male') {
-        genderIcon = '<i class=" fa-mars"></i>'; // Male icon
+        genderIcon = '<i class="fas fa-mars"></i>'; // Male icon
     } else if (gender.toLowerCase() === 'female') {
-        genderIcon = '<i class=" fa-venus"></i>'; // Female icon
+        genderIcon = '<i class="fas fa-venus"></i>'; // Female icon
     }
 
     // Format the date to DD/MM/YYYY

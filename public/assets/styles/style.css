@@ -364,44 +364,44 @@ select {
   
   .item:nth-child(10n+2) {
 
-    background-color: #95d6c5; 
+    background-color: #94cabc; 
     font-weight: bold;
     
   }
   
   .item:nth-child(10n+3) {
-    background-color: #f499f6; 
+    background-color: #d48dd5; 
     font-weight: bold;
 
   }
   
   .item:nth-child(10n+4) {
-    background-color: #a2c3f1; 
+    background-color: #94cabc; 
     font-weight: bold;
 
   }
   
   .item:nth-child(10n+5) {
-    background-color: #cfa2f9; 
+    background-color: #d48dd5; 
     font-weight: bold;
 
   }
   
 
   .item:nth-child(10n+6) {
-    background-color: #2ef78bea; 
+    background-color: #94cabc; 
     font-weight: bold;
 
   }
   
   .item:nth-child(10n+7) {
-    background-color: #1defefb1; 
+    background-color: #d48dd5; 
     font-weight: bold;
 
   }
   
   .item:nth-child(10n+8) {
-    background-color: #0f6fa6; 
+    background-color: #94cabc; 
     font-weight: bold;
 
     
@@ -409,7 +409,7 @@ select {
   }
   
   .item:nth-child(10n+9) {
-    background-color: #99db29; 
+    background-color: #d48dd5; 
     font-weight: bold;
 
   }
@@ -423,7 +423,7 @@ select {
 
 
 .button-container{
-    margin-right: 13cm;
+    margin-right: 16cm;
 }
 #resetButton{
     margin-left: 1px;
