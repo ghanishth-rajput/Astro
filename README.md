@@ -55,24 +55,28 @@ ASTRO
 │   ├── assets
 │   │   └── images
 │   └── styles
-│       └── style.css
+│       └── aadhaar.css
+|       └── dl.css
+|       └── pan.css
+|        └── style.css 
 ├── src
-│   ├── components
-│          └── DocumentList.astro
-│           └── Footer.astro
-│           └── Form.astro
-│           └── Header.astro
-│   ├── layouts
-|        └── BaseLayout.astro
-│   ├── pages
-│   │   └── index.astro
-│   ├── scripts
-│   │    └── app.js
-│        └── createEntry.js
-│        └── documentMapper.js
-│        └── formHandlers.js
-|        └── generateImage.js
-|        └── resetForm.js
+|   ├── components
+│   │   └── Nav.astro
+    ├── layouts
+│   │   └── MainLayout.astro
+│   └── pages
+│   │   └── aadhaar.astro
+|   │   └── dl.astro
+|   │    └── index.astro
+|   │     └── pan.astro 
+│   └── script
+│       └── Action.js
+|       └── app.js
+|       
+│   
+|
+│  
+│       
 ├── package.json
 ├── tsconfig.json
           
@@ -84,35 +88,39 @@ Here are some screenshots of the application:
 
 ### Document Entry Page
 
-![MainPage](</public/assets/images/FrontUI.png>)
- Entry Page consist of front ui of the application with the options of forms selection and buttons like save and reset details.
+![HomePage](</public/assets/images/HomePage.png>)
+ Entry Page consist of front ui of the application with the options of forms selection in form of Nav links 
 
- ![SelectionPage](</public/assets/images/OptionsSelection.png>)
- Entry Page consist of dropdown for form selection
+ 
 
 ### Forms Section
 
-![DrivingLicense](/public/assets/images/DLForm.png)
+![AadhaarNav](/public/assets/images/AadhaarForm.png)
+This page consist of aadhaar form , the tabel which stores the form data 
+
 
 ![PanForm](/public/assets/images/PanForm.png)
+This page consist of Pan form , the tabel which stores the form data 
 
-![AadharCard](/public/assets/images/AadharForm.png)
+![DlNav](/public/assets/images/DlForm.png)
+This page consist of Pan form , the tabel which stores the form data 
 
-This section consists of forms image that are used in our website 
 
-### Canva Image
 
-![PanCard](/public/assets/images/PanCard.png)
 
-![AadharCard](/public/assets/images/AadharCard.png)
+### Data tabel and Canva image
 
-![DlCard](public/assets/images/DrivingLicense.png)
+![PanData](/public/assets/images/PanData.png)
+the tabel data showing is showing in below canva Image with the option of download them
+
+![AadhaarData](/public/assets/images/AadhaarData.png)
+the tabel data showing is showing in below canva Image with the option of download them
+
+![DlData](public/assets/images/DlData.png)
+the tabel data showing is showing in below canva Image with the option of download them
 
  This section consists of the canva image that are generated from user data after clicking view button 
 
-### SavedDetails
 
-![SavedDetails](public/assets/images/StoredData.png)
- This section consists of the samples of some data collected from the user
 
 

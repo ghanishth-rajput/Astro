@@ -1,18 +1,18 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import Form from '../components/Form.astro';
-import DocumentList from '../components/DocumentList.astro';
+import MainLayout from '../layouts/MainLayout.astro';
+import Nav from '../components/Nav.astro';
 ---
 
-<BaseLayout title="Home">
-  <div slot="header">
-    <Header />
-  </div>
-  <Form />
-  <DocumentList />
-  <div slot="footer">
-    <Footer />
-  </div>
-</BaseLayout>
+<MainLayout>
+    <nav slot="nav">
+        <Nav />
+    </nav>
+    <section>
+        <h1>Welcome to the Document Storage Application</h1>
+        <p>_Select a document type from the navigation to get started_</p>
+    </section>
+</MainLayout>
+
+
+
+
